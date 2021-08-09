@@ -1,0 +1,64 @@
+#Spring level configurations
+spring:
+  main:
+    banner-mode: off
+
+#Application control properties
+application:
+  formatting:
+    date: MM/dd/yy
+    currency: $#,##0.00
+
+
+#Since this is a sample-self-contained project, we will use the property file instead of setting up
+#a database to store the tool data and holidays
+holiday:
+  -
+    #Independence day is a weekday holiday surrounding July 4th
+    type: closest-weekday
+    month: 07
+    day: 04
+  -
+    #Labor day is the Monday on or following September 1st
+    type: next-monday
+    month: 09
+    day: 01
+
+tool-data:
+  tool-type:
+    #Tool type data
+    -
+      type: Ladder
+      charge: 1.99
+      weekday: true
+      weekend: true
+      holiday: false
+    -
+      type: Chainsaw
+      charge: 1.49
+      weekday: true
+      weekend: false
+      holiday: true
+    -
+      type: Jackhammer
+      charge: 2.99
+      weekday: true
+      weekend: false
+      holiday: false
+  tools:
+    -
+      code: LADW
+      type: Ladder
+      brand: Werner
+    -
+      code: CHNS
+      type: Chainsaw
+      brand: Stihl
+    -
+      code: JAKR
+      type: Jackhammer
+      brand: Ridgid
+    -
+      code: JAKD
+      type: Jackhammer
+      brand: DeWalt
